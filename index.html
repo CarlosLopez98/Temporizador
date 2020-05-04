@@ -7,6 +7,7 @@
   <title>Temporizador para ejercicio</title>
 </head>
 <body>
+  <script src="js/main.js"></script>
 
   <h1>Temporizador</h1>
 
@@ -20,9 +21,9 @@
     </select>
 
     <label for="">Tiempo de actividad:</label>
-    <input type="number" value="40" min="20" max="60">
+    <input type="number" id="t_actividad" value="40" min="20" max="60" onclick="calcular_tiempo_descanso()">
 
-    <label for="">Tiempo de descanso: 20</label>
+    <label for="" id="t_descanso">Tiempo de descanso:</label>
   </form>
 
 </body>
