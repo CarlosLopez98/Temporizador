@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #f5f176;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+form {
+  width: 50%;
+  margin: 50px auto;
+}
+
+form .caja-form {
+  width: 60%;
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+form .caja-form label {
+  width: 50%;
+}
+
+form .caja-form select {
+  width: 50%;
+  margin: 0 auto;
+}
+
+form .caja-form input {
+  width: 50%;
+  margin: 0 auto;
+}

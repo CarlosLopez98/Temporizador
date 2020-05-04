@@ -5,26 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Temporizador para ejercicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <script src="js/main.js"></script>
-
   <h1>Temporizador</h1>
 
   <form action="index.html" method="POST">
-    <label for="">Tiempo total:</label>
-    <select name="" id="tiempo">
-      <option value="10">10 minutos</option>
-      <option value="20">10 minutos</option>
-      <option value="30">10 minutos</option>
-      <option value="40">10 minutos</option>
-    </select>
+    <div class="caja-form">
+      <label for="">Tiempo total:</label>
+      <select name="" id="tiempo">
+        <option value="10">10 minutos</option>
+        <option value="20">10 minutos</option>
+        <option value="30">10 minutos</option>
+        <option value="40">10 minutos</option>
+      </select>
+    </div>
 
-    <label for="">Tiempo de actividad:</label>
-    <input type="number" id="t_actividad" value="40" min="20" max="60" onclick="calcular_tiempo_descanso()">
+    <div class="caja-form">
+      <label for="">Tiempo de actividad:</label>
+      <input type="number" id="t_actividad" value="40" min="20" max="60" onclick="calcular_tiempo_descanso()">
+    </div>
 
-    <label for="" id="t_descanso">Tiempo de descanso:</label>
+    <div class="caja-form">
+      <label for="" id="t_descanso">Tiempo de descanso:</label>
+    </div>
+
+    <div class="caja-form">
+      <input type="submit" value="Empezar">
+    </div>
   </form>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
