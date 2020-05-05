@@ -15,27 +15,48 @@ h1 {
   letter-spacing: 5px;
 }
 
-form {
+.params {
   width: 50%;
   margin: 50px auto;
 }
 
-form .caja-form {
+.params .caja-form {
   width: 60%;
   margin: 20px auto;
   font-size: 20px;
 }
 
-form .caja-form label {
+.params .caja-form label {
   width: 50%;
 }
 
-form .caja-form select {
+.params .caja-form select {
   width: 50%;
   margin: 0 auto;
 }
 
-form .caja-form input {
+.params .caja-form input {
   width: 50%;
   margin: 0 auto;
+}
+
+.cronometro {
+  width:200px;
+  height:100px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.boton {
+  display:inline-block;
+  width:100px;
+  height:32px;
+  position:relative;
+}
+
+#ms {
+  height:68px;
+  padding:5px 0;
+  font-size:50px;
+  color:#000;
 }

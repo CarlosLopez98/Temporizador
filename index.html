@@ -11,14 +11,14 @@
 <body>
   <h1>Temporizador</h1>
 
-  <form action="index.html" method="POST">
+  <div class="params">
     <div class="caja-form">
       <label for="">Tiempo total:</label>
       <select name="" id="tiempo">
-        <option value="10">10 minutos</option>
-        <option value="20">10 minutos</option>
-        <option value="30">10 minutos</option>
-        <option value="40">10 minutos</option>
+        <option value="10" onclick="set_tiempo_inicial()">10 minutos</option>
+        <option value="20" onclick="set_tiempo_inicial()">20 minutos</option>
+        <option value="30" onclick="set_tiempo_inicial()">30 minutos</option>
+        <option value="40" onclick="set_tiempo_inicial()">40 minutos</option>
       </select>
     </div>
 
@@ -28,13 +28,21 @@
     </div>
 
     <div class="caja-form">
-      <label for="" id="t_descanso">Tiempo de descanso:</label>
+      <label for="">Tiempo de descanso:</label>
+      <input type="number" id="t_descanso" disabled>
     </div>
+  </div>
 
-    <div class="caja-form">
-      <input type="submit" value="Empezar">
-    </div>
-  </form>
+  <div class="cronometro">
+    <div id="ms"></div>
+    <div class="boton start"><button>Empezar</button></div>
+    <div class="boton stop"><button>Parar</button></div>
+    <div class="boton reiniciar"><button>Reiniciar</button></div>
+  </div>
+
+  <audio id="alarma" hidden>
+    <source type="audio/mp3" src="sound/alarma.mp3"></source>
+  </audio>
 
   <script src="js/main.js"></script>
 </body>
