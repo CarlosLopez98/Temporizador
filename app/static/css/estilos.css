@@ -10,14 +10,47 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 20px;
   font-size: 50px;
   letter-spacing: 5px;
 }
 
+/* Barra de navegacion */
+.navbar {
+  display: inline-block;
+  width: 30%;
+  margin-left: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  float: right;
+}
+
+.navbar ul li {
+  list-style: none;
+  float: right;
+  width: 130px;
+  height: 30px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.navbar ul li:hover {
+  background: #eae42d;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .params {
   width: 50%;
-  margin: 50px auto;
+  margin: 40px auto;
+  margin-top: 70px;
 }
 
 .params .caja-form {

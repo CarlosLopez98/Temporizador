@@ -1,5 +1,5 @@
 from app import create_app
-from app import db
+from app import db, User, Work
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 from config import config

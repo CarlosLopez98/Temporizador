@@ -1,6 +1,3 @@
-from decouple import config
-
-
 class Config:
     SECRET_KEY = 'llaveprovisional'
 
