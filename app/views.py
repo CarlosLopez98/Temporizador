@@ -68,5 +68,5 @@ def signup():
 @page.route('/logout')
 def logout():
     logout_user()
-    flash('Cerraste sesión exitosamente.')
+    flash('Cerraste sesión exitosamente.', 'success')
     return redirect(url_for('page.index'))

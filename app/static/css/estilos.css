@@ -130,17 +130,30 @@ a {
   border: 1px solid #FFF;
 }
 
-/* Errores */
-.text-danger {
-  color: #fc5a55;
-}
-
-.text-success {
-  color: #76fc55;
-}
-
+/* Mensajes */
 .message {
   width: 30%;
   height: 30px;
   margin: 0 auto;
+  padding-top: 10px;
+  color: #000;
+  text-align: center;
+}
+
+.message-danger {
+  background: #fc5a55;
+}
+
+.message-success {
+  background: #92e579;
+}
+
+.text-danger {
+  text-align: center;
+  color: #ea3731;
+}
+
+.text-success {
+  text-align: center;
+  color: #60c741;
 }
