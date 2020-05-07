@@ -1,6 +1,6 @@
 from wtforms import Form
 from wtforms import validators
-from wtforms import StringField, PasswordField, BooleanField, HiddenField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, HiddenField, TextAreaField, IntegerField
 from wtforms.fields.html5 import EmailField
 
 from .models import User
@@ -21,7 +21,12 @@ class LoginForm(Form):
 
 class RegisterForm(Form):
     username = StringField('Username', [
-        validators.length(min=4, max=50)
+        validators.length(min=4, max=50),
+        validators.data_required(message='Ingresa un nombre de usuario.')
+    ])
+    age = IntegerField('Age', [
+        validators.number_range(1, 99, message='Debe ser una edad válida.'),
+        validators.required(message='Tu edad es necesaria')
     ])
     email = EmailField('Email', [
      validators.length(min=6, max=100, message='El campo debe tener entre 4 y 50 caracteres.'),
@@ -33,9 +38,7 @@ class RegisterForm(Form):
         validators.EqualTo('confirm_password', message='La contraseña no coincide')
     ])
     confirm_password = PasswordField('Confirm password')
-    accept = BooleanField('Acepto términos y condiciones', [
-        validators.DataRequired()
-    ])
+    
     honeypot = HiddenField('', [ lenght_honeypot])
 
 

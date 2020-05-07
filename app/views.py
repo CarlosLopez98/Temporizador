@@ -24,6 +24,49 @@ def index():
 
 @page.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('page.index'))
+
     form = LoginForm(request.form)
 
+    if request.method == 'POST' and form.validate():
+        username = form.username.data
+        password = form.password.data
+
+        user = User.get_by_username(username)
+        if user and user.verify_password(password):
+            login_user(user)
+            flash('Usuario autenticado.', 'success')
+
+            return redirect(url_for('page.index'))
+
+        else:
+            flash('Username o password incorrectos.', 'danger')
+
     return render_template('auth/login.html', title='Login', form=form)
+
+@page.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if current_user.is_authenticated:
+        return redirect(url_for('page.index'))
+
+    form = RegisterForm(request.form)
+
+    if request.method == 'POST' and form.validate():
+        username = form.username.data
+        age = form.age.data
+        email = form.email.data
+        password = form.password.data
+
+        user = User.create_element(username, age, password, email)
+        flash('Usuario registrado con éxito.', 'success')
+
+        return redirect(url_for('page.login'))
+
+    return render_template('auth/signup.html', title='Signup', form=form)
+
+@page.route('/logout')
+def logout():
+    logout_user()
+    flash('Cerraste sesión exitosamente.')
+    return redirect(url_for('page.index'))

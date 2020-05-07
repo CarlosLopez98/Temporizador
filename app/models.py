@@ -31,8 +31,8 @@ class User(db.Model, UserMixin):
         return self.username
 
     @classmethod
-    def create_element(cls, username, password, email):
-        user = User(username=username, password=password, email=email)
+    def create_element(cls, username, age, password, email):
+        user = User(username=username, age=age, password=password, email=email)
 
         db.session.add(user)
         db.session.commit()

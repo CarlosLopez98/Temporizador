@@ -73,6 +73,7 @@ a {
   margin: 0 auto;
 }
 
+/* Cronometro content */
 .cronometro {
   width:200px;
   height:100px;
@@ -92,4 +93,54 @@ a {
   padding:5px 0;
   font-size:50px;
   color:#000;
+}
+
+/* Formularios */
+.form-group {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 95%;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background: #f1eb32;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #faf31c;
+  cursor: pointer;
+}
+
+.btn-primary:focus {
+  border: 1px solid #FFF;
+}
+
+/* Errores */
+.text-danger {
+  color: #fc5a55;
+}
+
+.text-success {
+  color: #76fc55;
+}
+
+.message {
+  width: 30%;
+  height: 30px;
+  margin: 0 auto;
 }
