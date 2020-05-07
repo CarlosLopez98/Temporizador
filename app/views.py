@@ -70,3 +70,35 @@ def logout():
     logout_user()
     flash('Cerraste sesión exitosamente.', 'success')
     return redirect(url_for('page.index'))
+
+
+# Views para el work
+@page.route('/work/history/<int:id>')
+@login_required
+def work_history(id):
+    if id == current_user.id:
+        works = current_user.works
+
+        return render_template('work/history.html', title='Tu historial', works=works)
+    else:
+        return redirect(url_for('page.work_history', id=current_user.id))
+
+@page.route('/work/save', methods=['GET'])
+@login_required
+def save_work():
+    if request.method == 'GET':
+        tneto = request.args.get('tneto')
+        tjob = request.args.get('tjob')
+        texe = request.args.get('texe')
+        trest = request.args.get('trest')
+
+        if tneto and tjob and texe and trest:
+            work = Work.create_element(tneto, tjob, texe, trest, current_user.id)
+
+            flash('Se creó un registro de trabajo.', 'success')
+        else:
+            flash('Hubo un fallo al crear el registro de trabajo', 'danger')
+            
+        return redirect(url_for('page.index'))
+    else:
+        return redirect(url_for('page.index'))

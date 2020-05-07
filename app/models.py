@@ -56,15 +56,16 @@ class Work(db.Model):
     __tablename__ = 'works'
 
     id = db.Column(db.Integer, primary_key=True)
-    total_time = db.Column(db.Integer, nullable=False)
-    work_time = db.Column(db.Integer, nullable=False)
-    rest_time = db.Column(db.Integer, nullable=False)
+    total_time = db.Column(db.Integer, nullable=False) #Tiempo total de la sesion
+    total_work_time = db.Column(db.Integer, nullable=False) # Tiempo total que trabajo el cliente en segundos
+    work_time = db.Column(db.Integer, nullable=False) # Tienmpo de trabajo por minuto
+    rest_time = db.Column(db.Integer, nullable=False) # Tiempo de descanso por minuto
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     date = db.Column(db.DateTime, default=datetime.datetime.now())
 
     @classmethod
-    def create_element(cls, total_time, work_time, rest_time, user_id):
-        work = Task(total_time=total_time, work_time=work_time, rest_time=rest_time, user_id=user_id)
+    def create_element(cls, total_time, total_work_time, work_time, rest_time, user_id):
+        work = Work(total_time=total_time, total_work_time=total_work_time, work_time=work_time, rest_time=rest_time, user_id=user_id)
 
         db.session.add(work)
         db.session.commit()

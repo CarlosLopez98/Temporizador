@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Historial de workout</h1>
+
+  <div class="params">
+    {% if works %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>Tiempo se sesión</th>
+          <th>Tiempo trabajado</th>
+          <th>Tiempo de ejercicio</th>
+          <th>Tiempo de descanso</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for work in works %}
+        <tr>
+          <td>{{ work.id }}</td>
+          <td>{{ work.date }}</td>
+          <td>{{ work.total_time }}</td>
+          <td>{{ work.total_work_time }}</td>
+          <td>{{ work.work_time }}</td>
+          <td>{{ work.rest_time }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>Aún no has guardado tu progreso</p>
+    {% endif %}
+  </div>
+
+{% endblock %}
